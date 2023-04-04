@@ -1,0 +1,15 @@
+<!-- <p>hand works!</p> -->
+
+<h3>{{ hand.player | titlecase }}</h3>
+<tr>
+  <td *ngFor="let card of hand.cards; let i = index">
+    <img
+      src="/assets/cards/card_{{ card.value }}_{{ card.suit }}.png"
+      alt="{{ card.value }} {{ card.suit }}"
+      (click)="discard(i)"
+      class="card"
+    />
+    <br />
+    <button (click)="discard(i)">Discard</button>
+  </td>
+</tr>

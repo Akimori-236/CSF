@@ -1,0 +1,46 @@
+<h1>Your Cart</h1>
+<form [formGroup]="cartForm" (ngSubmit)="checkout()">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" formControlName="name" /></td>
+    </tr>
+    <tr>
+      <td>Address:</td>
+      <td><input type="text" formControlName="address" /></td>
+    </tr>
+    <tr>
+      <td>Delivery:</td>
+      <td>
+        <input type="radio" formControlName="delivery" value="am" /><span
+          >AM</span
+        >
+        <input type="radio" formControlName="delivery" value="pm" /><span
+          >PM</span
+        >
+      </td>
+    </tr>
+  </table>
+  <br />
+  <table>
+    <thead>
+      <th>Items</th>
+      <th>Unit Price</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+    </thead>
+    <tbody *ngFor="let lineitem of cart; let i = index">
+      <tr>
+        <td>{{ lineitem.item | titlecase }}</td>
+        <td>{{ lineitem.unitPrice | currency }}</td>
+        <td>{{ lineitem.qty | number }}</td>
+        <td>{{ lineitem.subtotal | currency }}</td>
+      </tr>
+    </tbody>
+    <tr>
+      <td>Total:</td>
+      <td formControlName="total"></td>
+    </tr>
+  </table>
+  <button type="submit" [disabled]="cartForm.invalid">Checkout</button>
+</form>

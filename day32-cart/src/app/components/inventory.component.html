@@ -1,0 +1,39 @@
+<div>
+  <img src="/assets/fruits/harold.png" alt="" />
+  <h1>Harold's Mart</h1>
+</div>
+
+<span *ngFor="let item of inventory; let i = index">
+  <button (click)="populateItem(item)">
+    <img src="/assets/fruits/{{ item.item }}.png" />
+    <br />
+    <span>{{ item.item | titlecase }}</span>
+  </button>
+</span>
+
+<!-- FORM -->
+<form [formGroup]="inventoryForm" (ngSubmit)="addToCart()">
+  <table>
+    <tr>
+      <td><p>Item:</p></td>
+      <td><input type="text" formControlName="item" readonly /></td>
+    </tr>
+    <tr>
+      <td><p>Unit Price:</p></td>
+      <td>
+        <input type="number" step="0.01" formControlName="unitPrice" readonly />
+      </td>
+    </tr>
+    <tr>
+      <td><p>Quantity:</p></td>
+      <td><input type="number" formControlName="qty" /></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button type="submit" [disabled]="inventoryForm.invalid">
+          Add To Cart
+        </button>
+      </td>
+    </tr>
+  </table>
+</form>

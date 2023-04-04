@@ -1,0 +1,16 @@
+<div>
+  <webcam
+    [width]="width"
+    [height]="height"
+    [trigger]="shutter"
+    (imageCapture)="snapshot($event)"
+  ></webcam>
+</div>
+
+<div>
+  <button class="btn" type="button" (click)="pressShutter()">Snap</button>
+</div>
+
+<div *ngFor="let p of tempPicFilenames">
+  <img [src]="p" width="100" />
+</div>

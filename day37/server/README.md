@@ -1,0 +1,9 @@
+##Workshop37
+
+```
+set MYSQLUSER=
+set MYSQLPASSWORD=
+set DO_ACCESS_KEY=
+set DO_SECRET_KEY=
+set DO_ENDPOINT_REGION=
+```

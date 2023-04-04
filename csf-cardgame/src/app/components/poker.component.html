@@ -1,0 +1,24 @@
+<!-- <p>poker works!</p> -->
+<div class="align-right">
+  <h3>Discard Pile</h3>
+  <!-- if discardPile is more than 0, show last card -->
+  <img
+    *ngIf="discardPile.length > 0"
+    src="/assets/cards/card_{{ discardPile[discardPile.length - 1].value }}_{{
+      discardPile[discardPile.length - 1].suit
+    }}.png"
+  />
+  <i *ngIf="discardPile.length < 1">
+    Discard pile is empty
+  </i>
+</div>
+
+<app-hand
+  *ngFor="let player of players"
+  [hand]="player"
+  (onDiscard)="discard($event)"
+>
+  <!-- receive discard action from hand component, pass to poker component -->
+</app-hand>
+
+

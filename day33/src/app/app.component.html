@@ -1,0 +1,27 @@
+<!-- <table>
+  <tr>
+    <td width="50%">
+      <app-add-item (onNewItem)="addToLog($event)" [item]="selectedItem"
+        ><div>
+          <button type="submit">Add</button
+          ><button type="button" (click)="modifyItem()" #modifyButton>Modify</button>
+        </div>
+      </app-add-item>
+    </td>
+    <td>
+      <app-log [items]="items" (onSelection)="itemSelected($event)"></app-log>
+    </td>
+  </tr>
+</table> -->
+<app-address>
+  <form [formGroup]="orderForm">
+    <input type="text" name="" id="" />
+    <button type="submit">Create Order</button>
+    <button type="button">Add Item</button>
+    <table [formArrayName]="items">
+      <tr *ngFor="let item of items.controls; let i = index">
+        <td ></td>
+      </tr>
+    </table>
+  </form>
+</app-address>

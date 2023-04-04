@@ -1,0 +1,18 @@
+<i>App-root component level</i>
+
+<app-hello message="lolol"></app-hello>
+<app-hello message="{{ title }}"></app-hello>
+
+<div>
+  <!--  -->
+  <!-- <input type="text" value="{{ title }}" /><br /> -->
+  <!-- attribute binding -->
+  <!-- <input type="text" [placeholder]="title" [value]="title" [disabled]="disabled" (keypress)="newInputValue($event)" > -->
+  <!-- event binding -->
+  <!-- <button (click)="toggleInput()">toggle input field</button> -->
+</div>
+
+
+<app-count></app-count>
+<app-count [startNum]="10"></app-count>
+<app-count (valueChanged)="newInputValue($event)"></app-count>

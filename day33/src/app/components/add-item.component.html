@@ -1,0 +1,9 @@
+
+<form [formGroup]="addForm" (ngSubmit)="processForm()">
+  Item:
+  <input type="text" formControlName="item"/><br>
+  Qty:
+  <input type="number" formControlName="qty"/>
+  <ng-content></ng-content>
+  <!-- <button type="submit">Submit</button> -->
+</form>

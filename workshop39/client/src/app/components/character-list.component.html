@@ -1,0 +1,19 @@
+<div class="container">
+  <button class="btn btn-danger" type="button" [routerLink]="['/']">HOME</button>
+  <h1>View 1 - Character List</h1>
+  <table class="table">
+    <tbody>
+      <tr class="row" *ngFor="let char of characterList">
+        <td class="">
+          <a class="p-3" [routerLink]="['/characters/' + char.id]">
+            {{ char.name }}
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-danger" (click)="previous()">
+    Previous
+  </button>
+  <button type="button" class="btn btn-danger" (click)="next()">Next</button>
+</div>

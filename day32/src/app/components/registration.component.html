@@ -1,0 +1,36 @@
+<!-- bind the created FormGroup to this form -->
+<!-- use ngSubmit action to accept form on ts side -->
+<form [formGroup]="regForm" (ngSubmit)="submitForm()">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <!-- if square bracket, right side must be TS -->
+      <td>
+        <input type="text" [formControlName]="'name'" />
+        <!-- if input not valid and edited before -->
+        <div *ngIf="isControlInvalid('name')">Please enter your name</div>
+      </td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><input type="email" formControlName="email" /></td>
+    </tr>
+    <tr>
+      <td>Age:</td>
+      <td><input type="number" formControlName="age" /></td>
+    </tr>
+    <tr>
+      <td>Attending:</td>
+      <td>
+        <select formControlName="attendance">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button type="submit">Submit</button></td>
+    </tr>
+  </table>
+</form>

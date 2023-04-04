@@ -1,0 +1,15 @@
+<form [formGroup]="addressForm">
+  <h2>User Address</h2>
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" formControlName="name" /></td>
+    </tr>
+    <tr>
+      <td>Address:</td>
+      <td><input type="text" formControlName="address" /></td>
+    </tr>
+  </table>
+</form>
+
+<ng-content></ng-content>

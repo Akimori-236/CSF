@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Inventory</h1>
+  <h2>Please Select</h2>
+
+  <table class="table border">
+    <tbody>
+      <tr *ngFor="let f of fruits">
+        <td><img src="/assets/{{ f }}.jpg" height="50px;" /></td>
+        <td>
+          <span>{{ f | titlecase }}</span>
+        </td>
+        <td>
+          <button
+            class="btn btn-outline-primary"
+            type="button"
+            (click)="addItem(f)"
+          >
+            Add
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

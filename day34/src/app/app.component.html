@@ -1,0 +1,27 @@
+<div class="container">
+  <form class="form" [formGroup]="form" (ngSubmit)="getWeather()">
+    <table class="table">
+      <tr>
+        <td><p class="form-label">City Name</p></td>
+        <td>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="city"
+          />
+        </td>
+        <td>
+          <button
+            class="btn btn-outline-dark"
+            type="submit"
+            [disabled]="form.invalid"
+          >
+            GET
+          </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <app-weather-display></app-weather-display>
+</div>

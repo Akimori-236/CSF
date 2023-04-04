@@ -1,0 +1,6 @@
+<div class="container">
+  <div class="row">
+    <app-inventory class="col-6" (onNewItem)="addToCart($event)"></app-inventory>
+    <app-shopping-cart class="col-6" [cart]="cart" (onRemove)="removeItem($event)"></app-shopping-cart>
+  </div>
+</div>

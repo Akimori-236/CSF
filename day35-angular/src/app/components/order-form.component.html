@@ -1,0 +1,66 @@
+<div class="container">
+  <form class="form" [formGroup]="orderForm">
+    <table class="mx-auto">
+      <tr>
+        <td>
+          <label for="nameID" class="my-2">Name:</label>
+        </td>
+        <td>
+          <input type="text" id="nameID" class="my-2" formControlName="name" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="emailID" class="my-2">Email:</label>
+        </td>
+        <td>
+          <input
+            type="email"
+            id="emailID"
+            class="my-2"
+            formControlName="email"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-danger m-2"
+            (click)="addLineItem()"
+          >
+            Add</button
+          ><button
+            type="submit"
+            class="btn btn-outline-danger m-2"
+            [disabled]="orderForm.invalid"
+          >
+            Send Order
+          </button>
+        </td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <ng-template #noItems>
+      <p>Please click 'Add' to add items</p>
+    </ng-template>
+    <div class="mx-auto" formArrayName="lineItems">
+      <table *ngIf="itemArray.controls.length > 0; else noItems">
+        <tr
+          *ngFor="let li of itemArray.controls; let i = index"
+          [formGroupName]="i"
+        >
+          <td>
+            <input type="text" placeholder="Item" formControlName="item" />
+          </td>
+          <td>
+            <input type="number" placeholder="Quantity" formControlName="qty" />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </form>
+</div>
